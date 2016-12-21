@@ -4,6 +4,14 @@ Eloquent Models of TrinityCore Database
 
 
 
+## TODO
+- All relationships between models !!! 
+
+You can work with me. Make pull request ;)
+
+## Configuration
+
+
 - Add database connection in config/database.php
 
 ```
