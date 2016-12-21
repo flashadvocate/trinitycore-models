@@ -8,6 +8,7 @@
 namespace ThibaudDT\TrinityCoreModels\Auth;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
+use ThibaudDT\TrinityCoreModels\Characters\Character;
 
 /**
  * Class Account
@@ -104,4 +105,20 @@ class Account extends Eloquent
 	{
 		return $this->hasMany(\ThibaudDT\TrinityCoreModels\Auth\RbacAccountPermission::class, 'accountId');
 	}
+
+	public function accesses(){
+       return  $this->hasMany(AccountAccess::class,'id');
+    }
+
+    public function characters(){
+        return $this->hasMany(Character::class, 'account');
+    }
+
+    public function bans(){
+        return $this->hasMany(AccountBanned::class, 'id');
+    }
+
+    public function mutes(){
+        return $this->hasMany(AccountMuted::class, 'guid');
+    }
 }
