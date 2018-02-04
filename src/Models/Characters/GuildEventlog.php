@@ -46,4 +46,16 @@ class GuildEventlog extends Eloquent
 		'NewRank',
 		'TimeStamp'
 	];
+
+	public function guild(){
+		return $this->belongsTo(Guild::class, 'guildid', 'guildid');
+	}
+
+	public function character1(){
+		return $this->hasOne(Character::class, 'PlayerGuid1', 'guid');
+	}
+
+	public function character2(){
+		return $this->hasOne(Character::class, 'PlayerGuid2', 'guid');
+	}
 }

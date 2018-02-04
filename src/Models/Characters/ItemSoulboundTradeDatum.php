@@ -31,4 +31,16 @@ class ItemSoulboundTradeDatum extends Eloquent
 	protected $fillable = [
 		'allowedPlayers'
 	];
+
+	public function getAllowedPlayersAttribute($value){
+		$players = [];
+		foreach (explode(' ', $this->allowedPlayers) as $playerID){
+			$players[] = Character::find($playerID);
+		}
+		return $players;
+	}
+
+	public function item(){
+		return $this->belongsTo(ItemInstance::class, 'itemGuid', 'guid');
+	}
 }

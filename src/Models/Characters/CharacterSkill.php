@@ -36,4 +36,8 @@ class CharacterSkill extends Eloquent
 		'value',
 		'max'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
 }

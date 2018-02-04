@@ -36,4 +36,8 @@ class CharacterAccountDatum extends Eloquent
 		'time',
 		'data'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
 }

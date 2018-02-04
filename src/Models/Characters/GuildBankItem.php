@@ -36,4 +36,16 @@ class GuildBankItem extends Eloquent
 	protected $fillable = [
 		'item_guid'
 	];
+
+	public function guild(){
+		return $this->belongsTo(Guild::class, 'guildid', 'guildid');
+	}
+
+	public function tab(){
+		return $this->guild()->merge($this->belongsTo(GuildBankTab::class, 'TabId', 'TabId'));
+	}
+
+	public function item(){
+		return $this->belongsTo(ItemInstance::class, 'item_guid', 'guid');
+	}
 }

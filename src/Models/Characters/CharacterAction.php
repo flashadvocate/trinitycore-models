@@ -39,4 +39,8 @@ class CharacterAction extends Eloquent
 		'action',
 		'type'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
 }

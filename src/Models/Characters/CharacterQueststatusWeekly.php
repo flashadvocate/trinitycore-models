@@ -28,4 +28,12 @@ class CharacterQueststatusWeekly extends Eloquent
 		'guid' => 'int',
 		'quest' => 'int'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
+
+	public function quest(){
+		return $this->belongsTo(QuestTemplate::class, 'quest', 'ID');
+	}
 }

@@ -80,4 +80,16 @@ class GmTicket extends Eloquent
 		'needMoreHelp',
 		'resolvedBy'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'playerGuid', 'guid');
+	}
+
+	public function assignedTo(){
+		return $this->belongsTo(Character::class, 'assignedTo', 'guid');
+	}
+
+	public function closedBy(){
+		return $this->belongsTo(Character::class, 'closedBy', 'guid');
+	}
 }

@@ -39,4 +39,12 @@ class GuildBankRight extends Eloquent
 		'gbright',
 		'SlotPerDay'
 	];
+
+	public function guild(){
+		return $this->belongsTo(Guild::class, 'guildid', 'guildid');
+	}
+
+	public function tab(){
+		return $this->guild()->merge($this->belongsTo(GuildBankTab::class, 'TabId', 'TabId'));
+	}
 }

@@ -71,4 +71,8 @@ class ArenaTeam extends Eloquent
 		'borderStyle',
 		'borderColor'
 	];
+
+	public function captain(){
+		return $this->hasOne(Character::class, 'captainGuid', 'guid');
+	}
 }

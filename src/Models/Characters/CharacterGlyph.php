@@ -48,4 +48,8 @@ class CharacterGlyph extends Eloquent
 		'glyph5',
 		'glyph6'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
 }

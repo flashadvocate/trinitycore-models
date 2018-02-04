@@ -67,4 +67,12 @@ class CharacterQueststatus extends Eloquent
 		'itemcount4',
 		'playercount'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
+
+	public function quest(){
+		return $this->belongsTo(QuestTemplate::class, 'quest', 'ID');
+	}
 }

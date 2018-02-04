@@ -77,4 +77,8 @@ class Corpse extends Eloquent
 		'corpseType',
 		'instanceId'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
 }

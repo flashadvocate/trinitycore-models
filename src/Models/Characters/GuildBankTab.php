@@ -37,4 +37,8 @@ class GuildBankTab extends Eloquent
 		'TabIcon',
 		'TabText'
 	];
+
+	public function guild(){
+		return $this->belongsTo(Guild::class, 'guildid', 'guildid');
+	}
 }

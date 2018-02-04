@@ -41,4 +41,12 @@ class CharacterBanned extends Eloquent
 		'banreason',
 		'active'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
+
+	public function bannedBy(){
+		return $this->belongsTo(Character::class, 'bannedby', 'guid');
+	}
 }

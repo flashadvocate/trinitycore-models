@@ -60,4 +60,8 @@ class Guild extends Eloquent
 		'createdate',
 		'BankMoney'
 	];
+
+	public function leader(){
+		return $this->belongsTo(Character::class, 'leaderguid', 'guid');
+	}
 }
