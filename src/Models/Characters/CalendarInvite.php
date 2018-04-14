@@ -48,4 +48,12 @@ class CalendarInvite extends Eloquent
 		'rank',
 		'text'
 	];
+
+	public function invitee(){
+		return $this->belongsTo(Character::class, 'invitee', 'guid');
+	}
+
+	public function sender(){
+		return $this->hasOne(Character::class, 'sender', 'guid');
+	}
 }

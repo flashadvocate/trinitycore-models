@@ -35,4 +35,16 @@ class MailItem extends Eloquent
 		'mail_id',
 		'receiver'
 	];
+
+	public function mail(){
+		return $this->belongsTo(Mail::class);
+	}
+
+	public function item(){
+		return $this->hasOne(ItemInstance::class, 'item_guid', 'guid');
+	}
+
+	public function receiver(){
+		return $this->belongsTo(Character::class, 'receiver', 'guid');
+	}
 }

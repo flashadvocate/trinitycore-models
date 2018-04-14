@@ -37,4 +37,8 @@ class CharacterReputation extends Eloquent
 		'standing',
 		'flags'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
 }

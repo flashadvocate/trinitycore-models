@@ -56,4 +56,12 @@ class Auctionhouse extends Eloquent
 		'startbid',
 		'deposit'
 	];
+
+	public function itemOwner(){
+		return $this->belongsTo(Character::class, 'itemowner', 'guid');
+	}
+
+	public function item(){
+		return $this->hasOne(ItemInstance::class, 'itemguid', 'guid');
+	}
 }

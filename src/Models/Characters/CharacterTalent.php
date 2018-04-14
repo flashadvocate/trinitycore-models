@@ -30,4 +30,8 @@ class CharacterTalent extends Eloquent
 		'spell' => 'int',
 		'talentGroup' => 'int'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
 }

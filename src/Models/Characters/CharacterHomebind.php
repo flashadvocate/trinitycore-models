@@ -45,4 +45,8 @@ class CharacterHomebind extends Eloquent
 		'posY',
 		'posZ'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
 }

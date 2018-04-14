@@ -34,4 +34,12 @@ class CharacterQueststatusRewarded extends Eloquent
 	protected $fillable = [
 		'active'
 	];
+
+	public function character(){
+		return $this->belongsTo(Character::class, 'guid', 'guid');
+	}
+
+	public function quest(){
+		return $this->belongsTo(QuestTemplate::class, 'quest', 'ID');
+	}
 }
