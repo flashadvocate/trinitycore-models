@@ -7,7 +7,7 @@
 
 namespace ThibaudDT\TrinityCoreModels\Characters;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Character
