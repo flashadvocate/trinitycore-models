@@ -51,16 +51,4 @@ class GuildBankEventlog extends Eloquent
 		'DestTabId',
 		'TimeStamp'
 	];
-
-	public function guild(){
-		return $this->belongsTo(Guild::class, 'guildid', 'guildid');
-	}
-
-	public function tab(){
-		return $this->guild()->merge($this->belongsTo(GuildBankTab::class, 'TabId', 'TabId'));
-	}
-
-	public function character(){
-		return $this->belongsTo(Character::class, 'PlayerGuid', 'guid');
-	}
 }

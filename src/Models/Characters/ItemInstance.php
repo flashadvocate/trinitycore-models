@@ -66,20 +66,4 @@ class ItemInstance extends Eloquent
 		'playedTime',
 		'text'
 	];
-
-	public function owner(){
-		return $this->belongsTo(Character::class, 'owner_guid', 'guid');
-	}
-
-	public function creator(){
-		return $this->belongsTo(Character::class, 'creatorGuid', 'guid');
-	}
-
-	public function giftCreator(){
-		return $this->belongsTo(Character::class, 'giftCreatorGuid', 'guid');
-	}
-
-	public function itemTemplate(){
-		return $this->belongsTo(ItemTemplate::class, 'itemEntry', 'entry');
-	}
 }

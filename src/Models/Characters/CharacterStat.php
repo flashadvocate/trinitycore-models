@@ -119,8 +119,4 @@ class CharacterStat extends Eloquent
 		'spellPower',
 		'resilience'
 	];
-
-	public function character(){
-		return $this->belongsTo(Character::class, 'guid', 'guid');
-	}
 }

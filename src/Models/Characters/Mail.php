@@ -66,12 +66,4 @@ class Mail extends Eloquent
 		'cod',
 		'checked'
 	];
-
-	public function receiver(){
-		return $this->belongsTo(Character::class, 'receiver', 'guid');
-	}
-
-	public function creator(){
-		return $this->hasOne(MailLootTemplate::class, 'mailTemplateId', 'Entry');
-	}
 }

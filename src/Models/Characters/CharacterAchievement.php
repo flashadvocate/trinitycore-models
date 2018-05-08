@@ -34,8 +34,4 @@ class CharacterAchievement extends Eloquent
 	protected $fillable = [
 		'date'
 	];
-
-	public function character(){
-		return $this->belongsTo(Character::class, 'guid', 'guid');
-	}
 }

@@ -97,8 +97,4 @@ class CharacterEquipmentset extends Eloquent
 		'item17',
 		'item18'
 	];
-
-	public function character(){
-		return $this->belongsTo(Character::class, 'guid', 'guid');
-	}
 }

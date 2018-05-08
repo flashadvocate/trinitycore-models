@@ -50,8 +50,4 @@ class CalendarEvent extends Eloquent
 		'flags',
 		'time2'
 	];
-
-	public function creator(){
-		return $this->hasOne(Character::class, 'creator', 'guid');
-	}
 }

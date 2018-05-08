@@ -39,12 +39,4 @@ class CharacterInventory extends Eloquent
 		'bag',
 		'slot'
 	];
-
-	public function character(){
-		return $this->belongsTo(Character::class, 'guid', 'guid');
-	}
-
-	public function item(){
-		return $this->belongsTo(ItemInstance::class, 'item', 'guid');
-	}
 }

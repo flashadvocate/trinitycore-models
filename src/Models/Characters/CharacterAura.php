@@ -70,16 +70,4 @@ class CharacterAura extends Eloquent
 		'remainTime',
 		'remainCharges'
 	];
-
-	public function character(){
-		return $this->belongsTo(Character::class, 'guid', 'guid');
-	}
-
-	public function caster(){
-		return $this->belongsTo(Character::class, 'casterGuid', 'guid');
-	}
-
-	public function spell(){
-		return $this->belongsTo(SpellDbc::class, 'spell', 'Id');
-	}
 }

@@ -54,8 +54,4 @@ class AccountTutorial extends Eloquent
 		'tut6',
 		'tut7'
 	];
-
-	public function account(){
-		return $this->belongsTo(Account::class, 'accountId');
-	}
 }

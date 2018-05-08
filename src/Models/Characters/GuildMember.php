@@ -7,7 +7,7 @@
 
 namespace ThibaudDT\TrinityCoreModels\Characters;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class GuildMember
@@ -40,4 +40,14 @@ class GuildMember extends Eloquent
 		'pnote',
 		'offnote'
 	];
+
+	public function guild()
+    {
+        return $this->belongsTo('App\Guild', 'guildid');
+    }
+
+    public function member()
+    {
+        return $this->belongsTo('App\Character', 'guid');
+    }
 }

@@ -35,12 +35,4 @@ class CharacterSocial extends Eloquent
 	protected $fillable = [
 		'note'
 	];
-
-	public function character(){
-		return $this->belongsTo(Character::class, 'guid', 'guid');
-	}
-
-	public function friend(){
-		return $this->belongsTo(Character::class, 'friend', 'guid');
-	}
 }

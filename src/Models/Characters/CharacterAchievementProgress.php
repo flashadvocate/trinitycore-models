@@ -37,8 +37,4 @@ class CharacterAchievementProgress extends Eloquent
 		'counter',
 		'date'
 	];
-
-	public function character(){
-		return $this->belongsTo(Character::class, 'guid', 'guid');
-	}
 }
