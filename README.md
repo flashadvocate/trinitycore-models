@@ -1,6 +1,8 @@
 TrinityCore Eloquent Models
 =======================
 
+** This is a fork of the original package by [https://github.com/Thibaud-DT/trinitycore-models](Thibaud-DT).
+
 [![Latest Stable Version](https://poser.pugx.org/thibaud-dt/trinitycore-auth/version?format=flat)](https://packagist.org/packages/thibaud-dt/trinitycore-auth)
 [![Latest Unstable Version](https://poser.pugx.org/thibaud-dt/trinitycore-auth/v/unstable?format=flat)](//packagist.org/packages/thibaud-dt/trinitycore-auth)
 [![Total Downloads](https://poser.pugx.org/thibaud-dt/trinitycore-auth/downloads?format=flat)](https://packagist.org/packages/thibaud-dt/trinitycore-auth)
