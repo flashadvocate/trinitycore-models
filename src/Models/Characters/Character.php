@@ -247,32 +247,38 @@ class Character extends Eloquent
         'deleteDate'
     ];
 
-    public function getClassNameAttribute()
+    public function getClassNameAttribute($returnWrapped = false)
     {
         switch ($this->class) {
             case 1:
-                return "<span class='warrior'>Warrior</span>";
+                $class = "Warrior";
             case 2:
-                return "<span class='paladin'>Paladin</span>";
+                $class = "Paladin";
             case 4:
-                return "<span class='rogue'>Rogue</span>";
+                $class = "Rogue";
             case 3:
-                return "<span class='hunter'>Hunter</span>";
+                $class = "Hunter";
             case 5:
-                return "<span class='priest'>Priest</span>";
+                $class = "Priest";
             case 6:
-                return "<span class='death-knight'>Death Knight</span>";
+                $class = "Death Knight";
             case 7:
-                return "<span class='shaman'>Shaman</span>";
+                $class = "Shaman";
             case 8:
-                return "<span class='mage'>Mage</span>";
+                $class = "Mage";
             case 9:
-                return "<span class='warlock'>Warlock</span>";
+                $class = "Warlock";
             case 11:
-                return "<span class='druid'>Druid</span>";
-            default:
-                return "N/A";
+                $class = "Druid";
         }
+
+        if ($returnWrapped) {
+            $slug = str_slug($class);
+            $proper = ucwords($class);
+            return "<span class='{$slug}'>{$proper}</span>";
+        }
+
+        return $class;
     }
 
     /**
