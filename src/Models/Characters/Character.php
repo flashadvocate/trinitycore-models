@@ -305,4 +305,12 @@ class Character extends Eloquent
                 return "N/A";
         }
     }
+
+    /**
+     * Returns a portrait string for a character
+     */
+    public function getPortraitAttribute()
+    {
+        return "{$this->gender}-{$this->race}-{$this->class}";
+    }
 }
