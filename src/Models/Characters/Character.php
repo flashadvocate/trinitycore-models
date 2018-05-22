@@ -249,36 +249,46 @@ class Character extends Eloquent
 
     public function getClassNameAttribute($returnWrapped = false)
     {
-        switch ($this->class) {
-            case 1:
-                $class = "Warrior";
-            case 2:
-                $class = "Paladin";
-            case 4:
-                $class = "Rogue";
-            case 3:
-                $class = "Hunter";
-            case 5:
-                $class = "Priest";
-            case 6:
-                $class = "Death Knight";
-            case 7:
-                $class = "Shaman";
-            case 8:
-                $class = "Mage";
-            case 9:
-                $class = "Warlock";
-            case 11:
-                $class = "Druid";
+        switch (true) {
+            case ($this->class == 1):
+                $className = "Warrior";
+                break;
+            case ($this->class == 2):
+                $className = "Paladin";
+                break;
+            case ($this->class == 4):
+                $className = "Rogue";
+                break;
+            case ($this->class == 3):
+                $className = "Hunter";
+                break;
+            case ($this->class == 5):
+                $className = "Priest";
+                break;
+            case ($this->class == 6):
+                $className = "Death Knight";
+                break;
+            case ($this->class == 7):
+                $className = "Shaman";
+                break;
+            case ($this->class == 8):
+                $className = "Mage";
+                break;
+            case ($this->class == 9):
+                $className = "Warlock";
+                break;
+            case ($this->class == 11):
+                $className = "Druid";
+                break;
         }
 
         if ($returnWrapped) {
-            $slug = str_slug($class);
-            $proper = ucwords($class);
+            $slug = str_slug($className);
+            $proper = ucwords($className);
             return "<span class='{$slug}'>{$proper}</span>";
         }
 
-        return $class;
+        return $className;
     }
 
     /**
