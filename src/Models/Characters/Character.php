@@ -248,7 +248,9 @@ class Character extends Eloquent
     ];
 
     protected $appends = [
-        'portraitImage'
+        'portraitImage',
+        'className',
+        'raceName'
     ];
 
     public function getClassNameAttribute($returnWrapped = false)
