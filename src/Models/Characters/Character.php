@@ -337,7 +337,7 @@ class Character extends Eloquent
 
         return ($avatarDir) 
             ? asset("{$avatarDir}/{$this->portraitAttribute}.{$mimeType}")
-            : asset("images/avatars/{$this->portraitAttribute}.{$mimeType}"));
+            : asset("images/avatars/{$this->portraitAttribute}.{$mimeType}");
     }
 
     /**
