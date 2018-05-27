@@ -247,6 +247,10 @@ class Character extends Eloquent
         'deleteDate'
     ];
 
+    protected $appends = [
+        'portraitImage'
+    ];
+
     public function getClassNameAttribute($returnWrapped = false)
     {
         switch (true) {
@@ -320,6 +324,20 @@ class Character extends Eloquent
             default:
                 return "N/A";
         }
+    }
+
+    /**
+     * Returns a portrait image
+     */
+    public function getPortraitImageAttribute($avatarDir = null, $mimeType = '.gif')
+    {
+        if (!$this->portraitAttribute) {
+            return 'No portrait set';
+        }
+
+        return ($avatarDir) 
+            ? asset("{$avatarDir}/{$this->portraitAttribute}.{$mimeType}")
+            : asset("images/avatars/{$this->portraitAttribute}.{$mimeType}"));
     }
 
     /**
