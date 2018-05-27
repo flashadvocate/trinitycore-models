@@ -331,10 +331,6 @@ class Character extends Eloquent
      */
     public function getPortraitImageAttribute($avatarDir = null, $mimeType = '.gif')
     {
-        if (!$this->portraitAttribute) {
-            return 'No portrait set';
-        }
-
         return ($avatarDir) 
             ? asset("{$avatarDir}/{$this->portraitAttribute}.{$mimeType}")
             : asset("images/avatars/{$this->portraitAttribute}.{$mimeType}");
