@@ -298,32 +298,42 @@ class Character extends Eloquent
     /**
      * @return string
      */
-    public function getRaceNameAttribute()
+    public function getRaceNameAttribute($slug = false)
     {
         switch ($this->race) {
             case 1:
-                return "Human";
+                $race = "Human";
+                break;
             case 2:
-                return "Orc";
+                $race = "Orc";
+                break;
             case 3:
-                return "Dwarf";
+                $race = "Dwarf";
+                break;
             case 4:
-                return "Night Elf";
+                $race = "Night Elf";
+                break;
             case 5:
-                return "Undead";
+                $race = "Undead";
+                break;
             case 6:
-                return "Tauren";
+                $race = "Tauren";
+                break;
             case 7:
-                return "Gnome";
+                $race = "Gnome";
+                break;
             case 8:
-                return "Troll";
+                $race = "Troll";
+                break;
             case 10:
-                return "Blood Elf";
+                $race = "Blood Elf";
+                break;
             case 11:
-                return "Draenei";
-            default:
-                return "N/A";
+                $race = "Draenei";
+                break;
         }
+
+        return $slug ? str_slug($race) : $race;
     }
 
     /**
